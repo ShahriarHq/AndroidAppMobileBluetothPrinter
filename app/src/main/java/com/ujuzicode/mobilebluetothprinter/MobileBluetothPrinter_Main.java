@@ -99,10 +99,10 @@ public class MobileBluetothPrinter_Main  extends AppCompatActivity implements Vi
     private void printSampleReceipt() {
         String date = DateUtil.timeMilisToString(System.currentTimeMillis(), "dd-MM-yy / HH:mm");
         String companyNameStr	=
-                        "\nCUSTOMER NAME" + "\n"
-                        +"PHONE NUMBER"+ "\n";
+                        "\nMD. Zahid Hossain khan" + "\n"
+                        +"+8801833184089"+ "\n";
 
-        String orderStr = "\nORDER ID" +"\n"
+        String orderStr = "\nORDER ID: 69" +"\n"
                         +"ORDER DATE: "+ date + "\n";
 
         String titleStr	="SALES"+ "\n\n";
@@ -131,15 +131,15 @@ public class MobileBluetothPrinter_Main  extends AppCompatActivity implements Vi
 
         Log.d("Debug", "ContentSb: " + contentSb.toString());
 
-        contentSb.append("3").append("         ");
-        contentSb.append("500" + "         ");
-        contentSb.append("1500" + "\n\n");
+        contentSb.append("1").append("         ");
+        contentSb.append("180000" + "         ");
+        contentSb.append("180000" + "\n\n");
 
 
-        contentSvdt.append("SUBTOTAL    : " +"518" + "\n");
+        contentSvdt.append("SUBTOTAL    : " +"180000" + "\n");
         contentSvdt.append("VAT    : " +"2.0" + "\n");
         contentSvdt.append("DISCOUNT    : " +"0.0" + "\n");
-        contentSvdt.append("TOTAL PRICE    : " +"1500" + "\n\n");
+        contentSvdt.append("TOTAL PRICE    : " +"180000" + "\n\n");
 
 
         byte[] companyNameByte	= Printers.printfont(companyNameStr, FontDefine.FONT_32PX,FontDefine.Align_CENTER,(byte)0x1A, PocketPos.LANGUAGE_ENGLISH);
@@ -298,7 +298,7 @@ public class MobileBluetothPrinter_Main  extends AppCompatActivity implements Vi
 
             if (resultCode == RESULT_OK) {
                 String sName = data.getStringExtra("sName");
-                toolbar_title.setText(Html.fromHtml("<font color=\"#FFFFFF\"><b>MBT Printer (Printer: " + sName + ")</b></font>"));
+                toolbar_title.setText(Html.fromHtml("<font color=\"#FFFFFF\"><b>Shopoth Printer (Printer: " + sName + ")</b></font>"));
                 mPrint.setEnabled(true);
                 mBarCode.setEnabled(true);
                 activate_item.setVisible(false);
